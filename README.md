@@ -1,23 +1,23 @@
-# 知识蒸馏
+#Knowledge Distillation
 
-## 训练教师模型
+## Train teacher model
 
-    model_t = YOLO('yolov8l.pt')
-    model_t.train(data=data, epochs=100, imgsz=640, Distillation = None)
+     model_t = YOLO('yolov8l.pt')
+     model_t.train(data=data, epochs=100, imgsz=640, Distillation = None)
 
-## 学生模型
+## Student model
 
-    model_s = YOLO('yolov8s.pt')
-    model_s.train(data=data, epochs=100, imgsz=640, Distillation = model_t.model)
+     model_s = YOLO('yolov8s.pt')
+     model_s.train(data=data, epochs=100, imgsz=640, Distillation = model_t.model)
 
-## 提示
+## Hint
 
-    选择蒸馏方法施主自行到/ultralytics/yolo/engine/trainer.py：176行更改通道数以及CWDLoss 或者 MGDLoss。
+     Select the distillation method and go to /ultralytics/yolo/engine/trainer.py: line 176 to change the number of channels and CWDLoss or MGDLoss.
 
-## 效果
+## Effect
 
-    炼丹需要看各位施主的缘分。一般提高0.2-0.5map。
+     Refining alchemy depends on the fate of each donor. Generally increase by 0.2-0.5map.
 
-## 心得
+## Experience
 
-    大学教授不一定教好小学生。
+     University professors may not be able to teach elementary school students well.
